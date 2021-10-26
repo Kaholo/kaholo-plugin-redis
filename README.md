@@ -5,14 +5,14 @@ Kaholo plugin for integration with Redis DB.
 1. Redis Connection URL (Vault) **Required if not provided in method parameters** - The URL to use to connect to Redis on default. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379.
 
 ## Method: Get
-Get
+Get the values of the specified keys from the connected Redis server.
 
 ## Parameters
 1. Redis Connection URL (Vault) **Required if not in settings** - The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379.
 2. Keys (Text) **Required** - Keys to return the value of. Seperate each key with a new line. Also accepts an array from code.
 
 ## Method: Set
-Set
+Set the value of the specified key using the specified value, on the connected Redis server.
 
 ## Parameters
 1. Redis Connection URL (Vault) **Required if not in settings** - The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379.
