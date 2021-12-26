@@ -1,66 +1,75 @@
 {
-    "name": "Redis",
-    "type": "executer",
-    "execProgram": "node",
-    "main": "app.js",
-    "imgUrl": "logo.png",
-    "version": "1.0.0",
-    "description": "Integration with Redis.",
-    "category": "DATABASE",
-    "keywords": ["Database", "list", "maps", "devops", "manager", "request", "bitmaps", "db"],
-    "settings": [
+  "name": "Redis",
+  "type": "executer",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "logo.png",
+  "version": "1.0.2",
+  "description": "Integration with Redis.",
+  "category": "DATABASE",
+  "keywords": [
+    "Database",
+    "list",
+    "maps",
+    "devops",
+    "manager",
+    "request",
+    "bitmaps",
+    "db"
+  ],
+  "settings": [
+    {
+      "name": "connectionUrl",
+      "viewName": "Redis Connection URL",
+      "type": "vault",
+      "placeholder": "redis://user:password@host:port",
+      "description": "The URL to use to connect to Redis on default. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
+    }
+  ],
+  "methods": [
+    {
+      "name": "get",
+      "viewName": "Get",
+      "params": [
         {
-            "name": "connectionUrl",
-            "viewName": "Redis Connection URL",
-            "type": "vault",
-            "placeholder": "redis://user:password@host:port",
-            "description": "The URL to use to connect to Redis on default. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
-        }
-    ],
-    "methods":[
-        {
-            "name": "get",
-            "viewName": "Get",
-            "params":[
-                {
-                    "name": "connectionUrl",
-                    "viewName": "Redis Connection URL",
-                    "type": "vault",
-                    "placeholder": "redis://user:password@host:port",
-                    "description": "The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
-                },
-                {
-                    "name": "keys",
-                    "viewName": "Keys",
-                    "type": "text",
-                    "description": "Keys to return the value of. Seperate each key with a new line. Also accepts an array from code."
-                }
-            ]
+          "name": "connectionUrl",
+          "viewName": "Redis Connection URL",
+          "type": "vault",
+          "placeholder": "redis://user:password@host:port",
+          "description": "The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
         },
         {
-            "name": "set",
-            "viewName": "Set",
-            "params":[
-                {
-                    "name": "connectionUrl",
-                    "viewName": "Redis Connection URL",
-                    "type": "vault",
-                    "placeholder": "redis://user:password@host:port",
-                    "description": "The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
-                },
-                {
-                    "name": "key",
-                    "viewName": "Key",
-                    "type": "string",
-                    "description": "The key to set it's value."
-                },
-                {
-                    "name": "value",
-                    "viewName": "Value",
-                    "type": "string",
-                    "description": "The value to set to the key. Also accepts any kind of value from code."
-                }
-            ]
+          "name": "keys",
+          "viewName": "Keys",
+          "type": "text",
+          "description": "Keys to return the value of. Seperate each key with a new line. Also accepts an array from code."
         }
-    ]
+      ]
+    },
+    {
+      "name": "set",
+      "viewName": "Set",
+      "params": [
+        {
+          "name": "connectionUrl",
+          "viewName": "Redis Connection URL",
+          "type": "vault",
+          "placeholder": "redis://user:password@host:port",
+          "description": "The URL to use to connect to Redis. The format of the URL should be redis://[[user]:password@]host[:port][/db-number][?option=value]. For example redis://:SecretPass1234@127.0.0.1:6379."
+        },
+        {
+          "name": "key",
+          "viewName": "Key",
+          "type": "string",
+          "description": "The key to set it's value."
+        },
+        {
+          "name": "value",
+          "viewName": "Value",
+          "type": "string",
+          "description": "The value to set to the key. Also accepts any kind of value from code."
+        }
+      ]
+    }
+  ]
 }
